@@ -14,10 +14,21 @@
   "contributes": {
     "commands": [
       {
-        "command": "prompttune.helloWorld",
-        "title": "Hello World"
+        "command": "prompttune.optimize",
+        "title": "PromptTune: Optimize Selected Text"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "PromptTune",
+      "properties": {
+        "prompttune.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your Google Gemini API key. Get one at https://aistudio.google.com/apikey",
+          "editPresentation": "singlelineText"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
@@ -29,6 +40,9 @@
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "lint": "eslint src",
     "test": "vscode-test"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
   },
   "devDependencies": {
     "@types/vscode": "^1.109.0",
