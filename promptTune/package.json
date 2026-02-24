@@ -1,6 +1,8 @@
 {
   "name": "prompttune",
   "displayName": "PromptTune — AI Prompt Optimizer",
+  "publisher": "Sahil-2005",
+  "icon": "images/icon.png",
   "description": "Instantly rewrite and optimize AI prompts using Gemini — select text, run the command, get a production-ready prompt.",
   "version": "0.0.1",
   "engines": {
