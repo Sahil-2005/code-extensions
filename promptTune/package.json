@@ -1,21 +1,37 @@
 {
   "name": "prompttune",
-  "displayName": "PromptTune",
-  "description": "Optimize AI prompt directly in your editor",
+  "displayName": "PromptTune — AI Prompt Optimizer",
+  "description": "Instantly rewrite and optimize AI prompts using Gemini — select text, run the command, get a production-ready prompt.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.109.0"
   },
   "categories": [
-    "Other"
+    "Machine Learning",
+    "Programming Languages"
   ],
-  "activationEvents": [],
+  "keywords": [
+    "AI",
+    "Prompt Engineering",
+    "Gemini",
+    "LLM",
+    "Prompt Optimization",
+    "Google AI"
+  ],
+  "activationEvents": [
+    "onCommand:prompttune.optimize",
+    "onCommand:prompttune.optimizeFromClipboard"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "prompttune.optimize",
         "title": "PromptTune: Optimize Selected Text"
+      },
+      {
+        "command": "prompttune.optimizeFromClipboard",
+        "title": "PromptTune: Optimize from Clipboard"
       }
     ],
     "configuration": {
@@ -45,16 +61,18 @@
     "@google/generative-ai": "^0.21.0"
   },
   "devDependencies": {
-    "@types/vscode": "^1.109.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
-    "typescript-eslint": "^8.54.0",
-    "eslint": "^9.39.2",
-    "typescript": "^5.9.3",
-    "ts-loader": "^9.5.4",
-    "webpack": "^5.104.1",
-    "webpack-cli": "^6.0.1",
+    "@types/sinon": "^21.0.0",
+    "@types/vscode": "^1.109.0",
     "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.2",
+    "sinon": "^21.0.1",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
   }
 }
